@@ -56,7 +56,7 @@ switch (command) {
         helpModule.helpKey();
         break;
     default:
-        console.log('Please Enter a valid command')
+        // console.log('Please Enter a valid command')
 
 }
 
