@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body{
+      font-size: large;
+      border: 2px solid black;
+    }
+    .conatainer{
+      width: 90vw;
+      /* margin: 0 auto; */
+    }
+    .nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      /* border: 2px solid red; */
+      /* margin-top: 2rem; */
+      position: relative;
+      top: 1rem;
+      height: 50px;
+      font-size: 1.3rem;
+      background-color: red;
+    }
+
+    .navitem {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+
+
+    li {
+      list-style: none;
+      margin: 0 1rem;
+    }
+
+    .imgdiv{
+      height: 90vh;
+      width: 100vw;
+      margin: 1rem;
+    }
+    .img {
+      height: 100%;
+      /* width: 100%; */
+      /* margin: 1rem; */
+      /* position: relative; */
+      /* top: 1rem; */
+     } 
+
+    .sec{
+      display: flex;
+      box-sizing: border-box;
+      justify-content: space-around;
+      font-size: 1.3rem;
+    }
+    .card{
+      box-sizing: border-box;
+      /* border: 2px solid black; */
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      text-align: center;
+      width: 40%;
+      padding: 1.5 rem;
+    }
+    .footer{
+        /* border: 2px solid green; */
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        margin-top: 1rem;
+        color: white;
+        background-color: black;
+        font-size: 1.2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="nav">
+      <div class="logo">
+        <h2 class="logo1">DEV 101</h2>
+      </div>
+      <div class="navitem">
+        <li class="logo1">HTML</li>
+        <li class="logo1">CSS</li>
+        <li class="logo1">JAVASCRIPT</li>
+      </div>
+
+
+
+    </nav>
+
+    <div class="imgdiv">
+      <img src="./lap.jpeg" alt="#" class="img">
+    </div>
+  </header>
+  <section class="sec">
+    <div class="card">
+      <div class="img1"><img src="./html.png" alt=""></div>
+      <div class="h1">
+        <h3>HTML</h3>
+      </div>
+      <div class="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores, eius nostrum consectetur
+        temporibus repudiandae cupiditate? Inventore illo reprehenderit tempore.</div>
+    </div>
+
+    <div class="card">
+      <div class="img1"><img src="./css.png" alt=""></div>
+      <div class="h1">
+        <h3>CSS</h3>
+      </div>
+      <div class="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores, eius nostrum consectetur
+        temporibus repudiandae cupiditate? Inventore illo reprehenderit tempore.</div>
+    </div>
+
+    <div class="card">
+      <div class="img1"><img src="./icon.png" alt=""></div>
+      <div class="h1">
+        <h3>JAVASCRIPT</h3>
+      </div>
+      <div class="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores, eius nostrum consectetur
+        temporibus repudiandae cupiditate? Inventore illo reprehenderit tempore.</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="fot">
+      <p>&copy; pepcoding 2022 pvt ltd.</p>
+    </div>
+  </footer>
+  </div>
+</body>
+
+</html>

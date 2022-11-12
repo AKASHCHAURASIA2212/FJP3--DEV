@@ -1,0 +1,29 @@
+css selecters are used to select html element
+types:
+------
+inline
+internal
+external
+
+css 
+---
+    scss-allow us to use variable in your css
+    frameworks - bootstrap , tailwind , sass
+
+diff b/w xml and html
+---------------------
+xml-(extensible markup language)
+    use to transfer data of web page
+html
+    web page display
+
+css property
+------------ 
+  font
+  inline
+  block level element
+  inline block 
+  margin  trbl
+  padding trbl
+  border  
+  border-radius

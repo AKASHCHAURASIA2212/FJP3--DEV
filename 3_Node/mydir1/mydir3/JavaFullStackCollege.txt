@@ -1,0 +1,15 @@
+Recursion
+1.Given Big Problem
+2.Break it into Small Problem
+3.use recursion to further divide problem
+4.processing logic
+5.break condition
+
+1.sum of digit
+2. armstrong number
+3.prime number
+4.1 to N Armstrong number
+5.1 to N Prime number
+-----------------------------------------
+09/11/22
+-----------------------------------------
