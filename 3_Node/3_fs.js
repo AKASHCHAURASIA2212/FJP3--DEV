@@ -12,9 +12,9 @@ console.log('-------------file system module------------')
 
 // 1. reading
 
-//  let content = fs.readFileSync('f1.txt')
+let content = fs.readFileSync('f1.txt')
 
-//  console.log("f1 txt data -> "+content)
+console.log("f1 txt data -> " + content)
 
 
 //---------------------------------------------
@@ -95,31 +95,31 @@ fs.mkdirSync(pt)
 //----------------------------------------
 //***********Path Module****************/
 
-const path = require('path');
+// const path = require('path');
 
-console.log('-------------Path module------------')
+// console.log('-------------Path module------------')
 
 //--------------------------------------------------
 
-// 1. Copying files between diffrent folder 
+// 1. Copying files between diffrent folder
 
 // src path , dest path
 
-let srcFilePath = 'D:\\VS-CODE\\FJP3 DEV\\3_Node\\mydir1\\f4.txt'
-// let srcFilePath = 'D:\\VS-CODE\\FJP3 DEV\\3_Node\\mydir1\\mydir3'
+// let srcFilePath = 'D:\\VS-CODE\\FJP3 DEV\\3_Node\\mydir1\\f4.txt'
+// // let srcFilePath = 'D:\\VS-CODE\\FJP3 DEV\\3_Node\\mydir1\\mydir3'
 
-let destinationPath = 'D:\\VS-CODE\\FJP3 DEV\\3_Node\\mydir2'
+// let destinationPath = 'D:\\VS-CODE\\FJP3 DEV\\3_Node\\mydir2'
 
-let tobeCopiedFileName = path.basename(srcFilePath)
+// let tobeCopiedFileName = path.basename(srcFilePath)
 
-console.log(tobeCopiedFileName);
+// console.log(tobeCopiedFileName);
 
-let destPath = path.join(destinationPath,tobeCopiedFileName);
+// let destPath = path.join(destinationPath,tobeCopiedFileName);
 
-console.log(destPath);
+// console.log(destPath);
 
-fs.copyFileSync(srcFilePath,destPath);
+// fs.copyFileSync(srcFilePath,destPath);
 
-console.log('file copied');
+// console.log('file copied');
 
 
