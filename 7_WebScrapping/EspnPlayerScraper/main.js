@@ -3,7 +3,24 @@ const url = 'https://www.espncricinfo.com/series/indian-premier-league-2022-1298
 const request = require('request')
 const cheerio = require('cheerio')
 const allMatchObj = require('./AllMatch')
+//============================================
+const fs = require('fs')
+const path = require('path')
+
+
+let iplPath = path.join(__dirname, "IPL")
+
+dirCreater(iplPath);
+
+function dirCreater(filepath) {
+    if (fs.existsSync(filepath) == false) {
+        fs.mkdirSync(filepath)
+    }
+}
+//============================================
+
 request(url, cb)
+// console.log(iplPath)
 
 function cb(err, response, html) {
     if (err) {
@@ -30,3 +47,7 @@ function extrectLink(html) {
 
     allMatchObj.getAllMatch(fulllink);
 }
+
+
+
+

@@ -1,5 +1,6 @@
 // const url = 'https://www.espncricinfo.com/series/indian-premier-league-2022-1298423/chennai-super-kings-vs-kolkata-knight-riders-1st-match-1304047/full-scorecard'
 
+let xlsx = require('xlsx')
 
 function processScoreCard(url) {
     request(url, cb3);
@@ -91,9 +92,9 @@ function getMatchDetails(html) {
                 let STR = $(allCols[7]).text().trim()
 
                 console.log(`${playerName} | ${runs} | ${balls} | ${fours} | ${sixes} | ${STR}`)
-
-                // console.log('-------------------------------------------------')
-
+                //==========================================
+                processPlayer(Myteam, opponent, playerName, runs, balls, fours, sixes, STR, Place, date, result)
+                //==========================================
             }
 
 
@@ -106,7 +107,64 @@ function getMatchDetails(html) {
 
     }
 }
+//============================================
+const path = require('path')
+const fs = require('fs')
 
+function processPlayer(Myteam, opponent, playerName, runs, balls, fours, sixes, STR, Place, date, result) {
+    let teampath = path.join(__dirname, "IPL", Myteam)
+    dirCreater(teampath)
+
+    let filePath = path.join(teampath, playerName + '.xlsx')
+
+    let content = excelReader(filePath, playerName)
+
+    let playerObj = {
+        "teamname": Myteam,
+        opponent,
+        playerName,
+        runs,
+        balls,
+        fours,
+        sixes,
+        STR,
+        Place,
+        date,
+        result
+    }
+    content.push(playerObj);
+
+    excelWriter(filePath, playerName, content)
+
+}
+
+function dirCreater(filepath) {
+    if (fs.existsSync(filepath) == false) {
+        fs.mkdirSync(filepath)
+    }
+}
+
+function excelWriter(fileName, sheetName, jsonData) {
+    let newWB = xlsx.utils.book_new();
+    // Creating a new WorkBook
+    let newWS = xlsx.utils.json_to_sheet(jsonData);
+    // Creating new WorkSheet
+    xlsx.utils.book_append_sheet(newWB, newWS, sheetName);
+    xlsx.writeFile(newWB, fileName);
+}
+
+
+function excelReader(fileName, sheetName) {
+    if (fs.existsSync(fileName) == false) {
+        return [];
+    }
+    let wb = xlsx.readFile(fileName);
+    let excelData = wb.Sheets[sheetName];
+    let ans = xlsx.utils.sheet_to_json(excelData);
+    // console.log(ans)
+    return ans;
+}
+//============================================
 module.exports = {
     ps: processScoreCard
 }
